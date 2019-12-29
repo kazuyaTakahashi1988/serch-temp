@@ -17,8 +17,8 @@ $args = array(
   'order'            => 'DESC',
   'post_status'      => 'publish',
   'caller_get_posts' => 1,
-  'tax_query'        => array( 'relation' => 'AND'), // AND か OR で絞り込みまたは包括検索へ変更可
-  // 'meta_query'       => array( 'relation' => 'OR'), // [キーワードから探す]のデータ、AND か OR で同略・・・
+  'tax_query'        => array( 'relation' => 'AND'), // 'AND' か 'OR' で絞り込みまたは包括検索へ変更可
+  // 'meta_query'       => array( 'relation' => 'OR'), // [キーワードから探す]のデータ、'AND' か 'OR' で同略・・・
   );
 
 //カテゴリー01のデータ
@@ -27,7 +27,7 @@ if (isset($post_cate01)){
      'taxonomy' => 'cate01',
      'terms' => $post_cate01,
      'field' => 'term_id',
-     'operator' => 'AND', // AND か OR で同略・・・
+     'operator' => 'AND', // 'IN' か 'NOT IN' か 'AND'のいずれかが使用できる
      // 'include_children' => false,
     );
     array_push($args['tax_query'],array( $taxquery_cate01 ));
@@ -39,7 +39,7 @@ if (isset($post_cate02)){
      'taxonomy' => 'cate02',
      'terms' => $post_cate02,
      'field' => 'term_id',
-     'operator' => 'AND', // AND か OR で同略・・・
+     'operator' => 'AND', // 'IN' か 'NOT IN' か 'AND'のいずれかが使用できる
      // 'include_children' => false,
     );
     array_push($args['tax_query'],array( $taxquery_cate02 ));
@@ -51,7 +51,7 @@ if (isset($post_cate03)){
      'taxonomy' => 'cate03',
      'terms' => $post_cate03,
      'field' => 'term_id',
-     'operator' => 'AND', // AND か OR で同略・・・
+     'operator' => 'AND', // 'IN' か 'NOT IN' か 'AND'のいずれかが使用できる
      // 'include_children' => false,
     );
     array_push($args['tax_query'],array( $taxquery_cate03 ));
@@ -63,7 +63,7 @@ if (isset($post_cate03)){
 //      'taxonomy' => 'cate04',
 //      'terms' => $post_cate04,
 //      'field' => 'term_id',
-//      'operator' => 'AND', // AND か OR で同略・・・
+//      'operator' => 'AND', // 'IN' か 'NOT IN' か 'AND'のいずれかが使用できる
 //      // 'include_children' => false,
 //     );
 //     array_push($args['tax_query'],array( $taxquery_cate04 ));
